@@ -28,10 +28,11 @@ const Pokedex = () => {
           <Pokemon
             key={pokemon.id}
             id={pokemon.id}
-            name={pokemon.name[language]}
+            name={pokemon.name}
             type={pokemon.type}
             image={pokemon.image}
             base={pokemon.base}
+            language={language} // Pass down the language state to Pokemon component
           />
         ))}
       </div>

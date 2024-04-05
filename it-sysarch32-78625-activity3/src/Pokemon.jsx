@@ -1,13 +1,14 @@
 import React from 'react';
 
-const Pokemon = ({ id, name, type, image, base }) => {
+const Pokemon = ({ id, name, type, image, base, language }) => {
+  const displayName = name[language] || name.english; // Use selected language, fallback to English
+
   return (
     <div className="pokemon-card">
-      
-      <img src={image} alt={name.english} />
-        <div className="pokemon-details">
+      <img src={image} alt={displayName} />
+      <div className="pokemon-details">
         <h2>ID: {id}</h2>
-        <h2>Name: {name.english}</h2>
+        <h2>Name: {displayName}</h2>
         <div>Type: {type.join(', ')}</div>
         <div>HP: {base.HP}</div>
         <div>Attack: {base.Attack}</div>
